@@ -2,26 +2,30 @@
 #include<stdio.h>
 int main() {
 	int x, y;
-	int product, revProd, Product;
-	for (x = 10;x < 100; x++); {
+	int product, revProd, Product,keep,keepX,keepY;
+	for (x = 10;x < 100; x++) {
 		for (y = 10; y < 100;y++) {
 			product = x * y;
 			Product = product;
 			revProd = 0;
-			printf("product : %d revProd : %d\n", Product, revProd);
 				while (revProd >= 0)
 				{
+					//ขั้นตอนสลับเลขหน้าหลัง
 					revProd = revProd * 10 + Product % 10;
 					Product /= 10;	
-					//printf("product : %d revProd : %d\n", Product, revProd);
+					
+					if (revProd == product)
+					{
+						// เก็บตัวแปร
+						keep = product;
+						keepX = x;
+						keepY = y;
+						break;
+					}
 				}
-			if (revProd == product)
-			{
-				printf("%d x %d = %d\n", x, y, product);
-				break;
-			}
 		}
 	}
-	printf("Largest Product is : %d",product);
+	printf("%d x %d = %d\n", keepX, keepY, product);
+	printf("Largest Product is : %d",keep);
 	return 0;
 }
