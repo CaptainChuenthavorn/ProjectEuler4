@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
+
 int main() {
 	int x, y;
 	int product, revProd,num1,num2, Product,max,keepX,keepY;
@@ -10,8 +11,9 @@ int main() {
 	scanf("%d", &num1);
 	printf("Enter b : ");
 	scanf("%d", &num2);
-	for (x = 100;x <= num1; x++) {
-		for (y = 100; y <= num2;y++) {
+
+	for (x = 1;x <= num1; x++) {
+		for (y = 1; y <= num2;y++) {
 			product = x * y;
 			Product = product;
 			revProd = 0;
@@ -42,3 +44,4 @@ int main() {
 	}
 	return 0;
 }
+
